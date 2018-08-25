@@ -1504,7 +1504,7 @@ msg.channel.send(embed).then(() => {
 
 client.on('ready', function(){	
     var ms = 40000 ;	
-    var setGame = ['-help'];	
+    var setGame = ['tybe -help'];	
     var i = -1;	
     var j = 0;	
     setInterval(function (){	
