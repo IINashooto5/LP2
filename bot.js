@@ -29,7 +29,7 @@ const sql = require("sqlite");
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(` | -help | `,"https://www.twitch.tv/")
+  client.user.setGame(` | -help | `,"https://www.twitch.tv/nashoot2")
     console.log('')
     console.log('')
     console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -2426,6 +2426,21 @@ if (message.content.startsWith("-cv")) {
 }
 });
 
+var prefix = "-";
+var cats = [
+ 
+  "https://e.top4top.net/p_93346yja3.gif",
+  "https://d.top4top.net/p_933qqp7f2.gif",
+  "https://c.top4top.net/p_933eoslb1.gif",
+]
+    client.on('message', message => {
+        var args = message.content.split(" ").slice(1);
+    if(message.content.startsWith('كف')) {
+         var cat = new Discord.RichEmbed()
+.setImage(cats[Math.floor(Math.random() * cats.length)])
+message.channel.sendEmbed(cat);
+    }
+});
 
 client.on("message", (message) => {
     if (message.content.startsWith('-delet')) {
