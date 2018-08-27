@@ -29,7 +29,7 @@ const sql = require("sqlite");
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(` | -help | `,"https://www.twitch.tv/")
+  client.user.setGame(` | -help | `,"https://www.twitch.tv/nashoot2")
     console.log('')
     console.log('')
     console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -2437,6 +2437,18 @@ client.on("message", (message) => {
         channel.delete()
     }
 });  
+
+client.on('message', message => {
+  if (message.content.startsWith("رابط")) {
+
+message.channel.createInvite({
+      thing: true,
+      maxUses: 5,
+      maxAge: 86400
+  }).then(invite =>
+    message.author.sendMessage(invite.url)
+  )
+message.channel.send("**تم ارسال الرابط برسالة خاصة**")
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
